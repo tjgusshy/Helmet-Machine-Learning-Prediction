@@ -25,3 +25,12 @@ Running the notebook
 - Or start Jupyter Lab in the project root:
 
 jupyter lab nd open the notebook from the browser.
+
+## Project Files
+
+The following files are included in this folder:
+
+- `24069400.docx`
+- `accident_data.csv`
+- `helmet_accident_model.ipynb`
+- `README.md`
