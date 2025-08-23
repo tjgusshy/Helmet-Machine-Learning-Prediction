@@ -1,36 +1,75 @@
-# Helmet-Machine-Learning-Prediction
+# Predicting Helmet Usage in Accidents: A Machine Learning Analysis
 
-Brief instructions to run `helmet_accident_analysis.ipynb`:
+This project uses machine learning to predict whether a rider was wearing a helmet at the time of an accident, based on a dataset of accident reports. The primary goal is to identify key factors correlated with helmet use and to build an interpretable model to inform safety policies.
 
-Prerequisites
-- Python 3.8+ and a virtual environment (recommended).
-- A working `pip` installation.
+## Project Structure
 
-Setup (PowerShell)
-1. Create and activate venv:
+```
+.
+├── accident_data.csv         # The raw dataset used for the analysis
+├── Helmet_model.ipynb        # Main Jupyter Notebook with the full analysis
+├── README.md                 # This file
+└── ...                       # Other project files
+```
 
-	python -m venv .venv
-	.\\.venv\\Scripts\\Activate.ps1
+## How to Run the Model
 
-2. Install core packages:
+Follow these steps to set up your environment and run the analysis notebook.
 
-	pip install -r requirements.txt
+### 1. Prerequisites
 
-If `requirements.txt` is not available, install minimal packages:
+*   Python 3.8 or higher
+*   `pip` and `venv` for package management
 
-	pip install pandas numpy matplotlib seaborn scikit-learn jupyterlab nbformat nbconvert python-docx
+### 2. Setup Instructions
 
-Running the notebook
-- Open the workspace in VS Code and open `helmet_accident_analysis.ipynb`, then run cells interactively.
-- Or start Jupyter Lab in the project root:
+First, clone the repository and navigate into the project directory.
 
-jupyter lab nd open the notebook from the browser.
+**Create and activate a virtual environment:**
 
-## Project Files
+*   **Windows:**
+    ```bash
+    python -m venv .venv
+    .\.venv\Scripts\activate
+    ```
 
-The following files are included in this folder:
+*   **macOS / Linux:**
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
 
-- `24069400.docx`
-- `accident_data.csv`
-- `helmet_accident_model.ipynb`
-- `README.md`
+**Install the required packages:**
+
+A `requirements.txt` file is recommended for larger projects, but you can install the necessary packages directly using pip:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+```
+
+### 3. Running the Analysis
+
+Once your environment is set up and the packages are installed, you can run the analysis.
+
+**Start Jupyter Notebook:**
+
+From your terminal, run the following command to start the Jupyter Notebook server:
+
+```bash
+jupyter notebook
+```
+
+This will open a new tab in your web browser showing the project directory.
+
+**Open and run the notebook:**
+
+1.  Click on `Helmet_model.ipynb` to open it.
+2.  To run the entire analysis from top to bottom, go to the menu and select **Cell > Run All**.
+3.  Alternatively, you can run each cell individually by selecting it and pressing **Shift + Enter**.
+
+### 4. Understanding the Model and Results
+
+*   **Models Trained:** The notebook trains three models: Logistic Regression, Decision Tree, and Random Forest.
+*   **Best Performing Model:** The **Logistic Regression** model was identified as the most reliable and interpretable model, as the other two showed significant signs of overfitting.
+*   **Key Metric:** The analysis prioritizes **Precision** as the most important metric to ensure that safety interventions are targeted effectively and resources are not wasted.
+*   **Results:** The final report sections in the notebook detail the model's performance, including its cross-validation scores, confusion matrix, and ROC curve analysis.
